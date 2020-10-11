@@ -12,7 +12,9 @@ app.listen(port,()=>{
 });
 
 app.get('/',(req,res)=>{
-    res.json(data)
+    var ddata = require('./data.json')
+
+    res.json(ddata)
 });
 
 app.post('/',(req,res)=>{
