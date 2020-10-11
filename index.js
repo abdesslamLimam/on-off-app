@@ -17,8 +17,9 @@ app.get('/',(req,res)=>{
 
 app.post('/',(req,res)=>{
     console.log(req.body)
-    var newdata = JSON.parse(req.body)
-    data = newdata;
+    var newdata = req.body.status
+    data['status'] = newdata;
+    console.log(data)
     // fs.writeFileSync('./data.json',newdata,'utf-8')
     res.end('done ok')
 })
