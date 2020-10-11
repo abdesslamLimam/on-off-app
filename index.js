@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
-var data = require('./data.json')
-
+// var data = require('./data.json')
+var data = {status:"OFF"}
 const app = express();
 app.use(express.json())
 app.use(express.urlencoded())
@@ -18,6 +18,7 @@ app.get('/',(req,res)=>{
 app.post('/',(req,res)=>{
     console.log(req.body)
     var newdata = JSON.stringify(req.body)
-    fs.writeFileSync('./data.json',newdata,'utf-8')
+    data = newdata;
+    // fs.writeFileSync('./data.json',newdata,'utf-8')
     res.end('done ok')
 })
