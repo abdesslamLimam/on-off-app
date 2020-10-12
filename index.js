@@ -25,5 +25,5 @@ app.post('/',(req,res)=>{
     data['status'] = newdata;
     console.log(data)
     // fs.writeFileSync('./data.json',newdata,'utf-8')
-    res.json('done ok')
+    res.json({'ok':'done ok'})
 })
